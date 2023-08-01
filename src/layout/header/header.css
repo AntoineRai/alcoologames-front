@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+    margin: 2%;
+}
+
+.headerLogo {
+    width: 50%;
+}
+
+.headerLogo img {
+    height: 100%;
+}
+
+.headerContent {
+    width: 50%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 25%;
+    font-size: 1.5rem;
+}
