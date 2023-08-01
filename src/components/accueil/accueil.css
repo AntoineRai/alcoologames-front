@@ -1,8 +1,29 @@
 .accueil {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
     height: 65vh;
+}
+
+.accueilContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     gap: 5%;
+}
+
+.accueilContentItem {
+    width: 100%;
+}
+
+.accueilContentItem button {
+    width: 100%;
+    height: 100%;
+    border: solid 2px var(--third-color);
+    border-radius: 10px;
+    margin: 20%;
+    background-color: var(--second-color);
+    color: var(--third-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
 }
