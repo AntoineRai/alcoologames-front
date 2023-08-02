@@ -1,15 +1,18 @@
 import './App.css';
-import Header from './layout/header/header';
-import Footer from './layout/footer/footer'
-import Accueil from './components/accueil/accueil';
+import Accueil from './pages/HomePage';
+import Biskit from './pages/BiskitPage';
+import Picolo from './pages/PicoloPage';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <>
-    <Header/>
-    <Accueil/>
-    <Footer/>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Accueil/>}/>
+        <Route path="/biskit" element={<Biskit/>}/>
+        <Route path="/picolo" element={<Picolo/>}/>
+      </Routes>
+    </Router>
   );
 }
 

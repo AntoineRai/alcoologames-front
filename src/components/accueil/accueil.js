@@ -1,14 +1,19 @@
 import './accueil.css'
+import { Link } from 'react-router-dom'
 
 export default function Accueil() {
     return (
         <div className="accueil">
             <div className="accueilContent">
                 <div className="accueilContentItem">
-                    <button>Picolo</button>
+                    <Link to="/picolo">
+                        <button>Picolo</button>
+                    </Link>
                 </div>
                 <div className="accueilContentItem">
-                    <button>Biskit</button>
+                    <Link to="/biskit">
+                        <button>Biskit</button>
+                    </Link>
                 </div>
             </div>
         </div>
