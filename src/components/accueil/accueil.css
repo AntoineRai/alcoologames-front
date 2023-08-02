@@ -11,19 +11,10 @@
     gap: 5%;
 }
 
-.accueilContentItem {
-    width: 100%;
-}
-
 .accueilContentItem button {
-    width: 100%;
-    height: 100%;
-    border: solid 2px var(--third-color);
+    width: 300px;
+    height: 50px;
+    border: solid 4px var(--second-color);
     border-radius: 10px;
-    margin: 20%;
-    background-color: var(--second-color);
-    color: var(--third-color);
-    font-size: 1.5rem;
-    font-weight: bold;
-    cursor: pointer;
+    font-size: 1rem;
 }

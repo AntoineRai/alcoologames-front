@@ -5,10 +5,10 @@ export default function Accueil() {
         <div className="accueil">
             <div className="accueilContent">
                 <div className="accueilContentItem">
-                    <button>Jouer</button>
+                    <button>Picolo</button>
                 </div>
                 <div className="accueilContentItem">
-                    <button>Test</button>
+                    <button>Biskit</button>
                 </div>
             </div>
         </div>
