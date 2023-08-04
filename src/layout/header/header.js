@@ -10,7 +10,9 @@ export default function Header() {
                 </Link>
             </div>
             <div className="headerContent">
-                <div className="headerContentItem">Les joueurs</div>
+                <Link to="/player">
+                    <div className="headerContentItem">Les joueurs</div>
+                </Link>
             </div>
         </header>
     )
