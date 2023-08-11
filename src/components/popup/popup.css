@@ -17,11 +17,14 @@
     width: 100%;
     max-width: 640px;
     height: 30vh;
-    
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    border-radius: 10px;
+    border: solid 4px var(--second-color);
 }
 
 .popup-inner .close-btn {
