@@ -49,18 +49,24 @@ export default function Biskit() {
     };
 
     return (
-        <div className="container-biskit">
-            <h1>Bienvenue sur le jeu du Biskit</h1>
-            <p>Faites rouler le dé !</p>
-            <div className='container-dice'>
-                <h2>C'est au tour de :</h2>
-                <h1>{players[0]}</h1>
-                <button onClick={rollDice}>Lancer le dé</button>
-                <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
-                    <p>Le dé : {diceResult}</p>
-                    {message && <h2>{message}</h2>}
-                </Popup>
+        players.length === 0 ? (
+            <div className='container-biskit'>
+                <h1>Vous devez ajouter des joueurs</h1>
             </div>
-        </div>
+        ) :
+            (
+                <div className="container-biskit">
+                    <h1>Bienvenue sur le jeu du Biskit</h1>
+                    <p>Faites rouler le dé !</p>
+                    <div className='container-dice'>
+                        <h2>C'est au tour de :</h2>
+                        <h1>{players[0]}</h1>
+                        <button onClick={rollDice}>Lancer le dé</button>
+                        <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
+                            <p>Le dé : {diceResult}</p>
+                            {message && <h2>{message}</h2>}
+                        </Popup>
+                    </div>
+                </div>)
     );
 }

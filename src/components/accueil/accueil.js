@@ -6,11 +6,6 @@ export default function Accueil() {
         <div className="accueil">
             <div className="accueilContent">
                 <div className="accueilContentItem">
-                    <Link to="/picolo">
-                        <button>Picolo</button>
-                    </Link>
-                </div>
-                <div className="accueilContentItem">
                     <Link to="/biskit">
                         <button>Biskit</button>
                     </Link>
