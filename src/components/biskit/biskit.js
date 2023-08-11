@@ -1,16 +1,25 @@
 import './biskit.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import Popup from "../popup/popup.js"
 
 export default function Biskit() {
-    const [players, setPlayers] = useState(["Antoine", "Esteban"]);
+    const [players, setPlayers] = useState([]);
     const [diceResult, setDiceResult] = useState(null);
     const [message, setMessage] = useState(null);
-    const [rule, setRule] = useState([]);
+    const [buttonPopup, setButtonPopup] = useState(false);
+
+    useEffect(() => {
+        const storedPlayers = JSON.parse(localStorage.getItem('players'));
+        if (storedPlayers) {
+            setPlayers(storedPlayers);
+        }
+    }, []);
 
     const rollDice = () => {
         const result = Math.floor(Math.random() * 6) + 1;
         setDiceResult(result);
         handleDiceResult(result);
+        setButtonPopup(true);
     };
 
     const handleDiceResult = (result) => {
@@ -22,20 +31,16 @@ export default function Biskit() {
                 setMessage(`Le joueur à gauche et à droite de ${players[0]} boivent une gorgée`);
                 break;
             case 3:
-                setMessage(`Le Biskit boit une gorgée`);
+                setMessage(`${players[0]} distribue 3 gorgées`);
                 break;
             case 4:
-                const newRule = prompt("Inventez une règle");
-                if (newRule) {
-                    setRule(`Règle: ${newRule}`);
-                    setMessage("Nouvelle règle !");
-                }
+                setMessage(`Tout les joueurs boivent une gorgée`);
                 break;
             case 5:
-                setMessage("Criez Biskit !");
+                setMessage("Criez Biskit !\nLe dernier à le faire boit 5 gorgées");
                 break;
             case 6:
-                setMessage("Vous distribuez 6 gorgées");
+                setMessage(`${players[0]} distribue 6 gorgées`);
                 break;
             default:
                 break;
@@ -50,10 +55,11 @@ export default function Biskit() {
             <div className='container-dice'>
                 <h2>C'est au tour de :</h2>
                 <h1>{players[0]}</h1>
-                {rule && <p>{rule}</p>}
                 <button onClick={rollDice}>Lancer le dé</button>
-                <h2>Le dé : {diceResult}</h2>
-                {message && <h2>{message}</h2>}
+                <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
+                    <p>Le dé : {diceResult}</p>
+                    {message && <h2>{message}</h2>}
+                </Popup>
             </div>
         </div>
     );

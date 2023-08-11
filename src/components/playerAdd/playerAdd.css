@@ -1,24 +1,15 @@
-.player-container {
+.player-add {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 65vh;
 }
 
-.button-player {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 10px;
-}
-
-.button-player > * {
+.player-add > * {
     margin: 5px;
 }
 
-.button-player > button {
+.player-add > button {
     width: 300px;
     height: 40px;
     padding: 5px;
@@ -29,7 +20,16 @@
     transition: all 0.3s ease-in-out;
 }
 
-.button-player > button:hover {
+.player-add > input {
+    width: 300px;
+    height: 40px;
+    padding: 5px;
+    border: solid 2px var(--second-color);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.player-add > button:hover {
     cursor: pointer;
     background-color: var(--second-color);
 }
