@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/alcoologames-front.git/static/css/main.dfea8b54.css",
+    "main.js": "/alcoologames-front.git/static/js/main.c27d3541.js",
+    "static/js/787.f80d3f82.chunk.js": "/alcoologames-front.git/static/js/787.f80d3f82.chunk.js",
+    "index.html": "/alcoologames-front.git/index.html",
+    "main.dfea8b54.css.map": "/alcoologames-front.git/static/css/main.dfea8b54.css.map",
+    "main.c27d3541.js.map": "/alcoologames-front.git/static/js/main.c27d3541.js.map",
+    "787.f80d3f82.chunk.js.map": "/alcoologames-front.git/static/js/787.f80d3f82.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dfea8b54.css",
+    "static/js/main.c27d3541.js"
+  ]
+}
