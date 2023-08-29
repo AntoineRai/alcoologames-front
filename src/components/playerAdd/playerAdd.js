@@ -11,6 +11,12 @@ export default function PlayerAdd({ onAdd }) {
         }
     };
 
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            handleAdd();
+        }
+    };
+
     return (
         <div className="player-add">
             <input
@@ -18,8 +24,9 @@ export default function PlayerAdd({ onAdd }) {
                 placeholder="Nom du joueur"
                 value={playerName}
                 onChange={(e) => setPlayerName(e.target.value)}
+                onKeyPress={handleKeyPress} // Ajout du gestionnaire d'événements
             />
-            <button onClick={handleAdd}>Ajouter le jouer</button>
+            <button onClick={handleAdd}>Ajouter le joueur</button>
         </div>
     );
 }

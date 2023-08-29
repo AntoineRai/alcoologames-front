@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Gluten&display=swap');
 :root {
     --main-color: #FBB13C;
     --second-color: #895B1E;
@@ -11,6 +11,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    /*font-family: 'Poppins', sans-serif;*/
+    font-family: 'Gluten', sans-serif;
     background-color: var(--main-color);
+    text-decoration: none;
 }
