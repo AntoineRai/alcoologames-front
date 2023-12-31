@@ -63,7 +63,6 @@ export default function Roulette() {
 
   const changePage = () => {
     localStorage.setItem('numberspart', JSON.stringify(numbersPart));
-    window.location.reload();
   }
 
   return (
