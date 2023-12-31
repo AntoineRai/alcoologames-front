@@ -10,6 +10,11 @@ export default function Accueil() {
                         <button>Biskit</button>
                     </Link>
                 </div>
+                <div className="accueilContentItem">
+                    <Link to="/roulette">
+                        <button>Roulette</button>
+                    </Link>
+                </div>
             </div>
         </div>
     )

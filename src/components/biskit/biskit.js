@@ -48,6 +48,11 @@ export default function Biskit() {
         setPlayers((prevPlayers) => [...prevPlayers.slice(1), prevPlayers[0]]);
     };
 
+    const closePopup = () => {
+        setButtonPopup(false);
+        setPlayers((prevPlayers) => [...prevPlayers.slice(1), prevPlayers[0]]);
+      };
+
     return (
         players.length === 0 ? (
             <div className='container-biskit'>
@@ -62,7 +67,7 @@ export default function Biskit() {
                         <h2>C'est au tour de :</h2>
                         <h1>{players[0]}</h1>
                         <button onClick={rollDice}>Lancer le dé</button>
-                        <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
+                        <Popup trigger={buttonPopup} closePopup={closePopup}>
                             <p>Le dé : {diceResult}</p>
                             {message && <h2>{message}</h2>}
                         </Popup>
