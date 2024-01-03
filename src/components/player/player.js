@@ -30,7 +30,7 @@ export default function Player() {
             {players.length === 0 ? (
                 <p>Editez les joueurs</p>
             ) : (
-                <p>Voici les joueurs déjà enregistrés: {players.join(', ')}</p>
+                <p className='list-of-players'>Voici les joueurs déjà enregistrés: {players.join(', ')}</p>
             )}
             <div className='button-player'>
                 <PlayerAdd onAdd={handleAddPlayer} />

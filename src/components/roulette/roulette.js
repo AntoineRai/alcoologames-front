@@ -16,27 +16,27 @@ export default function Roulette() {
   useEffect(() => {
     setData(data, [])
 
-    if (!JSON.parse(localStorage.getItem('numberspart')) > 0){
+    if (!JSON.parse(localStorage.getItem('numberspart')) > 0) {
       localStorage.setItem('numberspart', JSON.stringify(5));
     }
-    
+
     const storedPlayers = JSON.parse(localStorage.getItem("players"));
 
-    if (storedPlayers){
-        setPlayers(storedPlayers)
+    if (storedPlayers) {
+      setPlayers(storedPlayers)
     }
 
-    if (data.length == 0){
-      for(let i = 0; i<JSON.parse(localStorage.getItem('numberspart')); i++){
+    if (data.length == 0) {
+      for (let i = 0; i < JSON.parse(localStorage.getItem('numberspart')); i++) {
         let texte = "Cul Sec"
-        if (i > 0){
+        if (i > 0) {
           texte = i
         }
-        let object = {option: texte}
+        let object = { option: texte }
         data.push(object)
       }
     }
-  
+
   }, []);
 
   const handleSpinClick = () => {
@@ -48,7 +48,7 @@ export default function Roulette() {
       setPrizeNumber(newPrizeNumber);
       setMustSpin(true);
     }
-    
+
   };
 
 
@@ -63,47 +63,51 @@ export default function Roulette() {
 
   const changePage = () => {
     localStorage.setItem('numberspart', JSON.stringify(numbersPart));
+    window.location.href = '';
   }
 
   return (
-    
-    players.length === 0 ? (
-            <div className='container-biskit'>
-                <h1>Vous devez ajouter des joueurs</h1>
-            </div>
-        ) :
 
-    
-    <div className="wheelContent">
-      <div style={{display: "flex", gap: "15px", alignItems: "center"}}>
-        <label>Nombre de choix : </label><input onChange={handleChange}></input> 
-        <button onClick={changePage}>Change</button>
+    players.length === 0 ? (
+      <div className='container-roulette'>
+        <h1>Vous devez ajouter des joueurs</h1>
       </div>
-    <h2>C'est au tour de :</h2>
-    <h1>{players[0]}</h1>
-    <div>
-    <Wheel
-        mustStartSpinning={mustSpin}
-        prizeNumber={prizeNumber}
-        data={data}
-        perpendicularText
-        backgroundColors={['#3e3e3e', '#df3428']}
-        spinDuration={"0.8"}
-        onStopSpinning={() => {
-          setMustSpin(false);
-          setButtonPopup(true)
-        }}
-      />
-    </div>
-    
-      <button onClick={handleSpinClick}>SPIN</button>
-      <div style={{zIndex: 99}}>
-      <Popup trigger={buttonPopup} closePopup={closePopup}>
-         {players[0]} {giveDrink ? 'doit donner' : 'doit boire'}
-      </Popup>
+    ) :
+
+
+      <div className="wheelContent">
+        <div className="number-wheel">
+          <label>Nombre de choix : </label><input onChange={handleChange}></input>
+          <button onClick={changePage} className="button-change-wheel">Changer le nombre de choix</button>
+        </div>
+        <h2>C'est au tour de :</h2>
+        <h1>{players[0]}</h1>
+        <div>
+          <Wheel
+            mustStartSpinning={mustSpin}
+            prizeNumber={prizeNumber}
+            data={data}
+            perpendicularText
+            backgroundColors={['#3e3e3e', '#df3428']}
+            spinDuration={"0.4"}
+            onStopSpinning={() => {
+              setMustSpin(false);
+              setButtonPopup(true);
+            }}
+          />
+        </div>
+
+        <button onClick={handleSpinClick}>SPIN</button>
+        <div style={{ zIndex: 99 }}>
+          <Popup trigger={buttonPopup} closePopup={closePopup}>
+            {players[0]} {giveDrink ?
+              `doit donner ${prizeNumber == 0 ? `un cul sec` : `${prizeNumber} gorgée(s)`}`
+              :
+              `doit boire ${prizeNumber == 0 ? `un cul sec` : `${prizeNumber} gorgée(s)`}`}
+          </Popup>
+        </div>
+
       </div>
-      
-    </div>
-    
+
   );
 }

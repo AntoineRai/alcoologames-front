@@ -33,3 +33,7 @@
     cursor: pointer;
     background-color: var(--second-color);
 }
+
+.list-of-players{
+    text-align: center ;
+}

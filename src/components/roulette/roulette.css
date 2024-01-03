@@ -1,10 +1,9 @@
-.wheelContent{
+.wheelContent {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100%;
     gap: 15px;
-
 }
 
 button {
@@ -17,20 +16,22 @@ button {
     transition: all 0.3s ease-in-out;
 }
 
- button:hover {
+button:hover {
     cursor: pointer;
     background-color: var(--second-color);
 }
 
-.started-spinning{
+.started-spinning {
     background-color: transparent;
 }
 
-.sc-dlfnbm canvas{ /* sc-dlfnbm est le nom de la classe de react-custom-roulette*/
+.sc-dlfnbm canvas {
+    /* sc-dlfnbm est le nom de la classe de react-custom-roulette*/
     background-color: transparent;
 }
 
-.sc-dlfnbm { /* sc-dlfnbm est le nom de la classe de react-custom-roulette*/
+.sc-dlfnbm {
+    /* sc-dlfnbm est le nom de la classe de react-custom-roulette*/
     background-color: transparent;
 }
 
@@ -41,4 +42,23 @@ input {
     border: solid 2px var(--second-color);
     font-size: 1rem;
     font-weight: bold;
+}
+
+.container-roulette {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 65vh;
+}
+
+.number-wheel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.button-change-wheel {
+    width: 350px;
 }
